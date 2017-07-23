@@ -229,10 +229,12 @@ public class Main5Activity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                if (Build.VERSION.SDK_INT >= 23) {
-                    if(dingding.equals("en") || dingding.equals("fr") || dingding.equals("de") || dingding.equals("ms")) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    if(dingding.equals("en") || dingding.equals("fr") || dingding.equals("de") || dingding.equals("ms")
+                            || dingding.equals("fil")|| dingding.equals("id")|| dingding.equals("jw")) {
                         String reading_text = textView.getText().toString();
-                        t1.speak(reading_text, TextToSpeech.QUEUE_FLUSH, null, null);
+
+                            t1.speak(reading_text, TextToSpeech.QUEUE_FLUSH, null, null);
                     }else{
                         Toast.makeText(Main5Activity.this, "ONLY ENGLISH OR LATIN LANGUAGES SUPPORTED", Toast.LENGTH_SHORT).show();
                     }
